@@ -2,7 +2,7 @@
 
 <head>
 <title>Ashashua!!!</title>
-<bgsound src="midi/mana.mid" loop="infinite">
+<bgsound src="midi/forest-into-the-thick-of-it-7-.mid" loop="infinite">
 <style>
 <!--A:hover { color:#ff00ff }
 //-->
@@ -11,38 +11,66 @@
 <meta http-equiv="Page-Exit" content="revealTrans(Duration=2.0,Transition=3)">
 <meta http-equiv="Site-Enter" content="revealTrans(Duration=2.0,Transition=2)">
 <meta http-equiv="Site-Exit" content="revealTrans(Duration=2.0,Transition=3)">
+<script>
+// Background MIDI playback via Web Audio / HTML5 audio (for modern browsers)
+window.addEventListener('DOMContentLoaded', function() {
+  var audio = document.createElement('audio');
+  audio.src = 'midi/forest-into-the-thick-of-it-7-.mid';
+  audio.loop = true;
+  audio.autoplay = true;
+  audio.style.display = 'none';
+  document.body.appendChild(audio);
+  audio.play().catch(function() {
+    // Autoplay blocked by browser policy — user interaction required
+  });
+});
+
+// Dynamically compute Kenny's current age from birthdate (May 30, 1977)
+function getCurrentAge() {
+  var birth = new Date(1977, 4, 30); // month is 0-indexed: 4 = May
+  var today = new Date();
+  var age = today.getFullYear() - birth.getFullYear();
+  var m = today.getMonth() - birth.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+    age--;
+  }
+  return age;
+}
+window.addEventListener('DOMContentLoaded', function() {
+  var el = document.getElementById('kenny-age');
+  if (el) el.textContent = getCurrentAge();
+});
+</script>
 </head>
 
 <body background="backrounds/x.gif" bgcolor="#000037" text="#FF00FF" link="#00BCFF" vlink="#0000FF" alink="#FFFF00" bgproperties="fixed">
 
-<p align="center"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<em><font color="#00FFFF">This site was last updated on:<!--webbot bot="Timestamp"
-startspan s-type="EDITED" s-format="%m/%d/%y %I:%M:%S %p" -->07/20/99 10:26:23 PM<!--webbot bot="Timestamp"
-i-checksum="28439" endspan --></font></em></strong></p>
-<div align="center"><center>
+<p align="center"><strong><em><font color="#00FFFF">This site was last updated on: 03/08/26 04:36:54 PM</font></em></strong></p>
+
+<div align="center">
 
 <table border="0" width="200">
   <tr>
     <td align="center" valign="top" width="100"><p align="left"><br>
     <font size="5"><b>Ashashua</b></font></p>
     <p>Kenny Burchett<br>
-    Male <br>
-    Age 22<br>
+    Male<br>
+    Age <span id="kenny-age">22</span><br>
     <br>
     Send E-Mail to me at <a href="mailto:Ashashua@theglobe.com">Ashashua!!</a></p>
-    <p><a href="mailto:Ashashua@theglobe.com"><img src="images/emove1.gif" alt="[E-mail envelope animation - image not recovered]" border="0" width="100" height="40"></a></td>
+    <p><a href="mailto:Ashashua@theglobe.com"><img src="images/emove1.gif" alt="E-mail envelope" border="0" width="100" height="40"></a></td>
     <td valign="top"><p align="center"><img src="images/ashashua.jpg" alt="Image of Ashashua" align="left" hspace="0" width="422" height="317"> </td>
   </tr>
   <tr>
     <td valign="top" colspan="2"><p align="center"><em><b>Some of my friends</b>:</em> <a href="http://home.earthlink.net/~chrisricci/">FoxWing</a> <a href="http://members.theglobe.com/wicced">Wicced</a> <a href="http://www.bigmog.com/">BigMog</a>&nbsp;<a href="http://members.xoom.com/Masta_Slay/index.html">T-Money</a>&nbsp;<a href="http://www.geocities.com/heartland/9473/scabys.html">Scaby</a> <a href="http://members.xoom.com/HedzRed/">HedzRed</a> <a href="http://home.earthlink.net/~dheriford/index.html">Scribes</a></td>
   </tr>
 </table>
-</center></div>
+</div>
 
 <blockquote>
-  <p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome!!
+  <p align="center">Welcome!!
   You have successfully landed on Ashashua!!! Not many people have made it here so feel
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; privileged!Ashashua is known for it's famous Wookie
+  privileged! Ashashua is known for it's famous Wookie
   Poodles(descendants of the Wookie), Reemers, Excellent variety of Stroodles, and
   Creampops!!! Forget not the ever famous &quot;Tower Of Lost Souls&quot;</p>
   <p>&nbsp;</p>
@@ -57,7 +85,7 @@ i-checksum="28439" endspan --></font></em></strong></p>
 <blockquote>
   <blockquote>
     <blockquote>
-      <p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do you want
+      <p align="center">Do you want
       to know where it all started? The name of Ashashua, where did it come from? Where am I?
       What is Ashashua? This is weird....Just click on the link below to get to know a little
       history on Ashashua.</p>
@@ -89,29 +117,35 @@ outcasts on Asahshua!</p>
     <td width="100%"><p align="center">Hey, why don't you go visit the&nbsp; <a href="tree/Tree.html">Tree</a> Of Uselessness!</td>
   </tr>
 </table>
-<div align="center"><center>
+
+<div align="center">
 
 <table border="0" width="750">
   <tr>
     <td valign="top"><a href="creatures.html">Creatures</a><p><a href="foods.html">Exotic Foods</a></p>
     <p><a href="places.html">Places</a></td>
-    <td align="center" valign="middle"><img src="images/runkid.gif" width="64" height="64"> <font color="#00FFFF">Geesch, Geesch, Geesch!!</font><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td align="center" valign="middle"><img src="images/runkid.gif" width="64" height="64"> <font color="#00FFFF">Geesch, Geesch, Geesch!!</font><p>
     <a href="outcasts.html">The Outcasts</a></td>
     <td align="right" valign="top"><a href="topten.html">Top
     Ten Musical Hits!</a><p><a href="location.html">Planetary
     Locations</a></p>
     <p><a href="poll.html">Creature Voting Poll!!</a></td>
   </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td align="center" valign="middle"><font color="#00FFFF"><em>Ashashua 2.0 — new content coming 2026!</em></font></td>
+    <td>&nbsp;</td>
+  </tr>
 </table>
-</center></div>
+</div>
 
 <hr>
 
 <table border="0">
   <tr>
     <td width="300"><font color="#FFFFFF">Warning! This site makes no sense whatsoever. May
-    cause severe confusion. Some sentences, and phrases could possibly have no point.</font><p><font color="#00FFFF">© <font face="Symbol">ywlae</font> Geesch productions</font></td>
-    <td align="right" valign="middle" width="450"><font color="#FFFFFF">Best if viewed with: </font><a href="http://www.microsoft.com/ie/logo.asp"><img src="images/ie4get_animated.gif" alt="[Internet Explorer 4 'Get IE' animated badge - image not recovered]" width="90" height="30"></a><p><font color="#00FFFF"><small><small><em>With 800x600 resolution</em></small></small>.</font><font color="#FF0000"> </font><font color="#00FFFF">i</font><font color="#FFFF80">n</font><font color="#FF0000"> </font><font color="#00FF00">1</font><font color="#C0C0C0">6 b</font><font color="#8080FF">it c</font><font color="#FF00FF">o</font><font color="#FF0080">l</font><font color="#FF0000">or</font></p>
+    cause severe confusion. Some sentences, and phrases could possibly have no point.</font><p><font color="#00FFFF">&#169; <font face="Symbol">ywlae</font> Geesch productions</font></td>
+    <td align="right" valign="middle" width="450"><font color="#FFFFFF">Best if viewed with: </font><a href="http://www.microsoft.com/ie/logo.asp"><img src="images/ie4get_animated.gif" alt="Get Internet Explorer" width="90" height="30"></a><p><font color="#00FFFF"><small><small><em>With 800x600 resolution</em></small></small>.</font><font color="#FF0000"> </font><font color="#00FFFF">i</font><font color="#FFFF80">n</font><font color="#FF0000"> </font><font color="#00FF00">1</font><font color="#C0C0C0">6 b</font><font color="#8080FF">it c</font><font color="#FF00FF">o</font><font color="#FF0080">l</font><font color="#FF0000">or</font></p>
     <p><font color="#800040"><small><small>Nabisco ding!</small></small></font></td>
   </tr>
 </table>

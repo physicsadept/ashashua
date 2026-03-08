@@ -8,6 +8,11 @@
 - [ ] **Homepage MIDI** — Currently using `forest-into-the-thick-of-it-7-.mid` as a stand-in
       for the original `mana.mid`. Ask dad if he has a preferred song for the homepage background
       music, or if the current choice is good.
+- [ ] **MP3 autoplay not working** — Background music (`mp3/01. Secret of Mana.mp3`) is wired up
+      in index.html but not audible in Chrome. Diagnose browser autoplay policy issues and find a
+      suitable UX solution (e.g. a play button, user-gesture trigger, or audio context unlock).
+- [ ] **Creatures page music** — `midi/creaturemusic.mid` was not recovered. Find or source an
+      appropriate atmospheric surrogate for the creatures page background music.
 
 ## Missing Assets
 - [ ] **Background tile `backrounds/x.gif`** — The original repeating background tile used on
@@ -20,6 +25,9 @@
 - [ ] **`midi/` directory** — Most MIDI files referenced across pages were not recovered.
       The topten.html page links to 9 tracks, only `magnetremix.mid` is present. Consider
       hunting replacements or sourcing originals.
+- [ ] **Creatures page original images** — Key creature images were not recovered from the
+      original site. DALL-E placeholders are in use. Consider hunting Wayback Machine for:
+      `images/wookiepoodle.gif`, `images/ruffle.jpg`, `images/homepage.gif` (creatures page)
 
 ## Pages
 - [ ] **Tree of Uselessness** (`tree/Tree.html`) — Original page was not recoverable.

@@ -25,7 +25,8 @@
 - [ ] **`midi/` directory** — Most MIDI files referenced across pages were not recovered.
       The topten.html page links to 9 tracks, only `magnetremix.mid` is present. Consider
       hunting replacements or sourcing originals. Missing files include: `creaturemusic.mid`,
-      `food.mid`, and the topten.html tracklist.
+      `food.mid`, `pureland.mid` (places + portal), `manatitle1.mid` (happytrees),
+      `sombest.mid` (tools), and the topten.html tracklist.
 - [ ] **Creatures page original images** — Key creature images were not recovered from the
       original site. DALL-E placeholders are in use. Consider hunting Wayback Machine for:
       `images/wookiepoodle.gif`, `images/ruffle.jpg`, `images/homepage.gif` (creatures page)

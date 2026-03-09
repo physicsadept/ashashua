@@ -38,6 +38,10 @@
       to confirm the modern JS recreation looks faithful to the original.
 - [ ] **Location page images** — Two images pending DALL-E surrogates (not yet generated):
       `images_dalle/n604.png` (galaxy map), `images_dalle/uranus.png` (planetary montage)
+- [ ] **Winamp skin** (`topten.html`) — Original Ashashua Winamp skin (`ashashua_skin.zip`)
+      was hosted on Tripod and is no longer available. Hunt Wayback Machine for the zip.
+      `images/skin.jpg` (skin preview image) also not recovered.
+      If skin is found, restore the download link in topten.html.
 - [ ] **Location page video** — Original site had a video clip `moons.avi` hosted on xoom.com
       (now defunct). Consider hunting Wayback Machine for this file.
 

@@ -27,7 +27,7 @@
       hunting replacements or sourcing originals. Missing files include: `creaturemusic.mid`,
       `food.mid`, `pureland.mid` (places + portal), `manatitle1.mid` (happytrees),
       `sombest.mid` (tools), `manafort.mid` (location), `sombansh.mid` (name),
-      `castle.mid` (outcasts), `when.wav` (when),
+      `castle.mid` (outcasts), `somend.mid` (poll), `when.wav` (when),
       and the topten.html tracklist.
 - [ ] **Creatures page original images** — Key creature images were not recovered from the
       original site. DALL-E placeholders are in use. Consider hunting Wayback Machine for:

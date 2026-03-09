@@ -6,67 +6,177 @@
 <style><!--
   A:hover { color:#c0c0ff }
 //--></style>
+<script>
+var creatures = [
+  { name: "Wookie Poodle", img: "images/wookie.jpg",    alt: "Wookie Poodle" },
+  { name: "Reemer",        img: "images/reem.jpg",       alt: "Reemer" },
+  { name: "Crontosh",      img: "images/cront.jpg",      alt: "Crontosh" },
+  { name: "Koncatreen",    img: "images/konc.jpg",       alt: "Koncatreen" },
+  { name: "Rufflecrumb",   img: "images_dalle/ruffle.png", alt: "Rufflecrumb", imgWidth: 40, imgHeight: 40 }
+];
+
+function submitPoll() {
+  // Find which creature was voted for
+  var chosen = -1;
+  var radios = document.getElementsByName("poll");
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      chosen = parseInt(radios[i].value) - 1; // 0-indexed
+      break;
+    }
+  }
+  if (chosen === -1) {
+    alert("You must select a creature before voting!");
+    return false;
+  }
+
+  // Total votes: random between 10,000 and 20,000
+  var total = Math.floor(Math.random() * 10001) + 10000;
+
+  // Pick a winner that is NOT the chosen creature
+  var winner = chosen;
+  while (winner === chosen) {
+    winner = Math.floor(Math.random() * creatures.length);
+  }
+
+  // Generate random vote shares:
+  // Winner gets the most, chosen gets second, rest share the remainder
+  // We'll generate raw weights then normalize
+  var weights = [];
+  for (var i = 0; i < creatures.length; i++) {
+    weights[i] = Math.random();
+  }
+
+  // Force ordering: winner > chosen > everyone else
+  var maxW = Math.max.apply(null, weights);
+  var minOther = 999;
+  for (var i = 0; i < weights.length; i++) {
+    if (i !== winner && i !== chosen && weights[i] < minOther) minOther = weights[i];
+  }
+
+  // Ensure winner is highest
+  weights[winner] = maxW * 1.1 + 0.01;
+  // Ensure chosen is second (above all non-winner, non-chosen)
+  var secondVal = 0;
+  for (var i = 0; i < weights.length; i++) {
+    if (i !== winner && weights[i] > secondVal) secondVal = weights[i];
+  }
+  weights[chosen] = secondVal * 1.05 + 0.005;
+  // Make sure winner is still above chosen
+  if (weights[winner] <= weights[chosen]) {
+    weights[winner] = weights[chosen] * 1.1 + 0.01;
+  }
+
+  // Normalize to total votes
+  var sum = 0;
+  for (var i = 0; i < weights.length; i++) sum += weights[i];
+  var votes = [];
+  var assigned = 0;
+  for (var i = 0; i < weights.length; i++) {
+    if (i === creatures.length - 1) {
+      votes[i] = total - assigned; // last one gets remainder
+    } else {
+      votes[i] = Math.round((weights[i] / sum) * total);
+      assigned += votes[i];
+    }
+  }
+
+  // Sort indices by votes descending for display
+  var order = [];
+  for (var i = 0; i < creatures.length; i++) order[i] = i;
+  order.sort(function(a, b) { return votes[b] - votes[a]; });
+
+  // Build results HTML
+  var html = '<table border="0" cellpadding="2" width="100%">';
+  for (var r = 0; r < order.length; r++) {
+    var idx = order[r];
+    var pct = Math.round((votes[idx] / total) * 100);
+    var isChosen = (idx === chosen);
+    var isWinner = (idx === winner);
+    var label = creatures[idx].name;
+    if (isWinner) label += ' &#127942;';
+    if (isChosen) label += ' <em>(your vote)</em>';
+    html += '<tr>';
+    html += '<td width="80"><font color="#FFFF00" size="2">' + label + '</font></td>';
+    html += '<td><div style="background:#00FF40;width:' + Math.max(pct * 1.2, 2) + 'px;height:10px;display:inline-block;"></div></td>';
+    html += '<td><font color="#FFFF00" size="2">' + pct + '% (' + votes[idx].toLocaleString() + ')</font></td>';
+    html += '</tr>';
+  }
+  html += '</table>';
+  html += '<p align="center"><font color="#00FFFF" size="2"><em>' + total.toLocaleString() + ' total votes</em></font></p>';
+
+  document.getElementById("poll-form-area").innerHTML = html;
+  return false;
+}
+</script>
 </head>
 
-<body background="backrounds/2d.jpg" bgcolor="#FFFFFF" link="#00FFFF" vlink="#FFFF00" alink="#00FF00" bgproperties="fixed" text="#00FFFF">
+<body background="backrounds/2d.jpg" bgcolor="#000000" link="#00FFFF" vlink="#FFFF00" alink="#00FF00" bgproperties="fixed" text="#00FFFF">
 
 <!-- Begin Poll Code -->
 <!-- NOTE: The original voting widget (vantagenet.com apolls service) is no longer functional.
-     The poll form and creature thumbnails are preserved below for historical reference. -->
+     The poll form and creature thumbnails are preserved below for historical reference.
+     Vote tallies are simulated client-side. -->
 <div align="center"><center>
 
-<table border="1" cellpadding="4" cellspacing="0" width="123">
+<table border="1" cellpadding="4" cellspacing="0" width="220">
   <tr>
-    <td width="123" background="backrounds/abyss.jpg"><p align="center"><font color="#00FF00" size="3"><b>Creatures Web Poll</b></font></td>
+    <td width="220" background="backrounds/abyss.jpg"><p align="center"><font color="#00FF00" size="3"><b>Creatures Web Poll</b></font></td>
   </tr>
   <tr>
-    <td width="123" background="backrounds/abyss.jpg"><form action="http://apps2.vantagenet.com/apolls/count.asp" method="get">
-      <input type="hidden" name="ptype" value="0"><input type="hidden" name="id" value="88230577"><div align="center"><center><p><font color="#00FF40">What's your favorite
-      Ashashuaian creature?</font><br>
-      <br>
-      </p>
-      </center></div><table border="0">
-        <tr>
-          <td><table border="0">
+    <td width="220" background="backrounds/abyss.jpg">
+      <div id="poll-form-area">
+        <form onsubmit="return submitPoll();">
+          <input type="hidden" name="ptype" value="0">
+          <input type="hidden" name="id" value="88230577">
+          <div align="center"><center>
+            <p><font color="#00FF40">What's your favorite Ashashuaian creature?</font><br><br></p>
+          </center></div>
+          <table border="0">
             <tr>
-              <td><img src="images/wookie.jpg"></td>
+              <td><img src="images/wookie.jpg" alt="Wookie Poodle" width="40" height="40"></td>
               <td><input type="radio" name="poll" value="1"></td>
               <td><font color="#FFFF00" size="2">Wookie Poodle</font></td>
             </tr>
             <tr>
-              <td><img src="images/reem.jpg"></td>
+              <td><img src="images/reem.jpg" alt="Reemer" width="40" height="40"></td>
               <td><input type="radio" name="poll" value="2"></td>
               <td><font color="#FFFF00" size="2">Reemer</font></td>
             </tr>
             <tr>
-              <td><img src="images/cront.jpg"></td>
+              <td><img src="images/cront.jpg" alt="Crontosh" width="40" height="40"></td>
               <td><input type="radio" name="poll" value="3"></td>
               <td><font color="#FFFF00" size="2">Crontosh</font></td>
             </tr>
             <tr>
-              <td><img src="images/konc.jpg"></td>
+              <td><img src="images/konc.jpg" alt="Koncatreen" width="40" height="40"></td>
               <td><input type="radio" name="poll" value="4"></td>
               <td><font color="#FFFF00" size="2">Koncatreen</font></td>
             </tr>
             <tr>
-              <td><img src="images/rufflecrumb.jpg" alt="[Rufflecrumb poll thumbnail - image not recovered]"></td>
+              <td><img src="images_dalle/ruffle.png" alt="Rufflecrumb" width="40" height="40"></td>
               <td><input type="radio" name="poll" value="5"></td>
               <td><font color="#FFFF00" size="2">Rufflecrumb</font></td>
             </tr>
           </table>
-          </td>
-        </tr>
-      </table>
-      <div align="center"><center><p><br>
-      <input type="submit" value="Submit Vote"><br>
-      <a href="http://apps2.vantagenet.com/apolls/count.asp?id=88230577"><font color="E1156B" size="2">Current Results</font></a> </p>
-      </center></div>
-    </form>
+          <div align="center"><center>
+            <p><br>
+            <input type="submit" value="Submit Vote"><br>
+            <a href="http://apps2.vantagenet.com/apolls/count.asp?id=88230577"><font color="#E1156B" size="2">Current Results</font></a>
+            </p>
+          </center></div>
+        </form>
+      </div>
     </td>
   </tr>
 </table>
-</center></div><!-- End Poll Code -->
+</center></div>
 
+<p align="center"><font color="#00FFFF" size="2"><em>Vote tallies are independently estimated by a team of Earth analysts who have been
+studying these creatures from a comfortable distance since 1999. Results may vary depending
+on atmospheric humidity and the current location of Ashashua's moons.</em></font></p>
+
+<!-- End Poll Code -->
 
 <p align="center"><font color="#00FFFF" size="4"><em><strong>You can find all these
 creatures at Ashashua's <a href="creatures.html">Creatures</a>

@@ -269,7 +269,46 @@
       window.setTimeout("animate();", speed)
   }
 //-->
-</script></head>
+</script>
+
+<script>
+// Modern spiral fallback — runs on non-IE browsers where dynAnimation() is a no-op.
+// Recreates the FrontPage spiral entrance: element spirals in from top-left corner
+// using the same sinusoidal math as the original IE4 script.
+window.addEventListener('DOMContentLoaded', function() {
+  var isIE = navigator.userAgent.indexOf('MSIE') > -1 ||
+             navigator.userAgent.indexOf('Trident') > -1;
+  if (isIE) return; // let the original script handle it
+
+  var el = document.querySelector('[dynamicanimation="spiral"]');
+  if (!el) return;
+
+  el.style.position = 'relative';
+
+  var totalSteps = 32;
+  var step = 0;
+  var rx = 600;
+  var ry = 300;
+
+  function spiralStep() {
+    if (step > totalSteps) {
+      el.style.left = '0px';
+      el.style.top  = '0px';
+      return;
+    }
+    var v  = step / totalSteps;
+    var rf = 1.0 - v;
+    var t  = v * 2.0 * Math.PI;
+    el.style.left = Math.ceil(-rf * Math.cos(t) * rx) + 'px';
+    el.style.top  = Math.ceil(-rf * Math.sin(t) * ry) + 'px';
+    step++;
+    requestAnimationFrame(spiralStep);
+  }
+
+  spiralStep();
+});
+</script>
+</head>
 
 <body background="backrounds/x.gif" link="#FF0000" bgproperties="fixed" onload="dynAnimation()" text="#0000FF" vlink="#008080">
 
@@ -278,44 +317,39 @@
 
 <p>&nbsp;</p>
 
-<p><font color="#EC0076" size="5"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Long ago when Ashashuaian's were called &quot;beings&quot;&nbsp; way before the Creampop
+<p><font color="#EC0076" size="5"><em>Long ago when Ashashuaian's were called &quot;beings&quot; way before the Creampop
 millenium, and even before the search for Stroodles took effect, a mystical doorway called
 the &quot;dimentional portal&quot; was sited by one of the local beings. His name was
 Wings, named by his brother for being full of dreams and liking things with wings. Anyway
 this young man saw the Portal appear out of no-where. When he saw this he was astonished
-and told all the other beings in his village that this myserious light force was &nbsp;
-radiating,&nbsp; just south of <a href="happytrees.html">The Land of Happy Little
-Trees </a>, when they heard of this,&nbsp; all the people of the village rushed over to
+and told all the other beings in his village that this myserious light force was
+radiating, just south of <a href="happytrees.html">The Land of Happy Little
+Trees</a>, when they heard of this, all the people of the village rushed over to
 where it had been spotted.</em></font></p>
 
-<p><font color="#EC0076" size="5"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Soon they had realized that these portals were producing strange items. They had
+<p><font color="#EC0076" size="5"><em>Soon they had realized that these portals were producing strange items. They had
 definately not come from anywhere on Ashashua. All of the beings that had somewhat studied
 Ashashua were amazed at this incident. As time passed these people who studied Ashashua
 became known as the teachers and scholars that devoted every ounce of their time to
 unlocking the secrets of these portals. These teachers and Scholars began trying to learn
-the languages of&nbsp; the text&nbsp; that was written on most of the items. However their
+the languages of the text that was written on most of the items. However their
 efforts were failing because there were so many different varieties of languages to learn
-and&nbsp; so little knowledge about where these items were comming from .</em></font></p>
+and so little knowledge about where these items were comming from.</em></font></p>
 
-<p><font color="#EC0076" size="5"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Eventually they had come up with a plan to only learn the one language that seemed to show
+<p><font color="#EC0076" size="5"><em>Eventually they had come up with a plan to only learn the one language that seemed to show
 up the most frequently written on the items. They didn't know what to call the language,
 but it was obvious that the language was in a classification of it's own. As the years
 rolled on the pieces of the puzzle about this mysterious language began to be pieced
 together.</em></font></p>
 
-<p><font color="#EC0076" size="5"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-One day,&nbsp; a scholar (the name of the scholar is unknown and has been lost throughout
+<p><font color="#EC0076" size="5"><em>One day, a scholar (the name of the scholar is unknown and has been lost throughout
 time) was busy studying this one word he had been working on for a long while, when
 suddenly he realized how the word was supposed to be said. He took the item that matched
 the word , and brought it to all the local scholars and teachers and asked if a meeting
 could take place concerning this new evidence.</em></font></p>
 
-<p><font color="#EC0076" size="5"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-At the meeting, the scholar pointed to the item and begun to pronounce it with his mouth.
-when he spoke he said &quot;isha-shooo!&quot;&nbsp; After he said this, everyone in the
+<p><font color="#EC0076" size="5"><em>At the meeting, the scholar pointed to the item and begun to pronounce it with his mouth.
+when he spoke he said &quot;isha-shooo!&quot; After he said this, everyone in the
 room said &quot;ahhhhhh!&quot; From that day on everone assumed for some reason or another
 that he said &quot;ish a shooo-ahhhhhh!&quot; The beings on Ashashua decided the day of
 the meeting that the peoples purpose was to find out more about these portals and to
@@ -323,38 +357,16 @@ devote most of their efforts to unlocking it's secrets. They decided to name the
 after the first pronounced word only known to who ever, what ever was sending them these
 strange and mysterious items, from somewhere that was yet to be discovered.</em></font></p>
 
-<p><font color="#EC0076" size="5"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Througout time the original translation of Ashashua was lost. It had gone from
+<p><font color="#EC0076" size="5"><em>Througout time the original translation of Ashashua was lost. It had gone from
 &quot;isha-shoo&quot; to &quot;isha-shooo-ahhhhhh&quot; to &quot;Ash-a-shoo-ah&quot;
 creating the word Ashashua. All because of the scholar on that day of the meeting.</em></font></p>
 
-<p><font color="#EC0076" size="5"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If
-&nbsp; the Ashashuaian beings knew that the item the scholar was talking about was an
+<p><font color="#EC0076" size="5"><em>If the Ashashuaian beings knew that the item the scholar was talking about was an
 earthling shoe than it could have been named The Planet Of Shoe!!!! Ahhhhh!</em></font></p>
 
 <p>&nbsp;</p>
 
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
 <p><a href="index.html"><font color="#EC0076" size="4"><em><img src="images/homepage.gif" alt="[Homepage button - image not recovered]" border="0" width="115" height="22"></em></font></a></p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<p><font color="#EC0076" size="4"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</em></font></p>
-
-<p><font color="#EC0076" size="4"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</em></font></p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
 
 <p>&nbsp;</p>
 </body>

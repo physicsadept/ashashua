@@ -27,11 +27,15 @@
       hunting replacements or sourcing originals. Missing files include: `creaturemusic.mid`,
       `food.mid`, `pureland.mid` (places + portal), `manatitle1.mid` (happytrees),
       `sombest.mid` (tools), `manafort.mid` (location), `sombansh.mid` (name),
-      `when.wav` (when),
+      `castle.mid` (outcasts), `when.wav` (when),
       and the topten.html tracklist.
 - [ ] **Creatures page original images** — Key creature images were not recovered from the
       original site. DALL-E placeholders are in use. Consider hunting Wayback Machine for:
       `images/wookiepoodle.gif`, `images/ruffle.jpg`, `images/homepage.gif` (creatures page)
+- [ ] **Outcasts page — Poochy Getting Fried** — `images_dalle/poochyfry.png` is pending.
+      Generate a DALL-E image of Poochy getting fried by Ralphie The Raven's Rufflecrumb.
+- [ ] **name.html spiral animation** — Review the FrontPage spiral entrance effect with dad
+      to confirm the modern JS recreation looks faithful to the original.
 - [ ] **Location page images** — Two images pending DALL-E surrogates (not yet generated):
       `images_dalle/n604.png` (galaxy map), `images_dalle/uranus.png` (planetary montage)
 - [ ] **Location page video** — Original site had a video clip `moons.avi` hosted on xoom.com

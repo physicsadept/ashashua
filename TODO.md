@@ -26,10 +26,15 @@
       The topten.html page links to 9 tracks, only `magnetremix.mid` is present. Consider
       hunting replacements or sourcing originals. Missing files include: `creaturemusic.mid`,
       `food.mid`, `pureland.mid` (places + portal), `manatitle1.mid` (happytrees),
-      `sombest.mid` (tools), and the topten.html tracklist.
+      `sombest.mid` (tools), `manafort.mid` (location), `when.wav` (when),
+      and the topten.html tracklist.
 - [ ] **Creatures page original images** — Key creature images were not recovered from the
       original site. DALL-E placeholders are in use. Consider hunting Wayback Machine for:
       `images/wookiepoodle.gif`, `images/ruffle.jpg`, `images/homepage.gif` (creatures page)
+- [ ] **Location page images** — Two images pending DALL-E surrogates (not yet generated):
+      `images_dalle/n604.png` (galaxy map), `images_dalle/uranus.png` (planetary montage)
+- [ ] **Location page video** — Original site had a video clip `moons.avi` hosted on xoom.com
+      (now defunct). Consider hunting Wayback Machine for this file.
 
 ## Pages
 - [ ] **Tree of Uselessness** (`tree/Tree.html`) — Original page was not recoverable.

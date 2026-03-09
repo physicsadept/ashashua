@@ -12,16 +12,157 @@
 <meta http-equiv="Site-Enter" content="revealTrans(Duration=2.0,Transition=2)">
 <meta http-equiv="Site-Exit" content="revealTrans(Duration=2.0,Transition=3)">
 <script>
-// Background MIDI playback via Web Audio / HTML5 audio (for modern browsers)
+// ============================================================
+// MATRIX TERMINAL SPLASH SCREEN + AUDIO UNLOCK
+// ============================================================
 window.addEventListener('DOMContentLoaded', function() {
+
+  // --- Audio setup ---
   var audio = document.createElement('audio');
   audio.src = 'mp3/01. Secret of Mana.mp3';
   audio.loop = true;
-  audio.autoplay = true;
   audio.style.display = 'none';
   document.body.appendChild(audio);
-  audio.play().catch(function() {
-    // Autoplay blocked by browser policy — user interaction required
+
+  // --- Build overlay ---
+  var overlay = document.createElement('div');
+  overlay.id = 'matrix-overlay';
+  overlay.style.cssText = [
+    'position:fixed',
+    'top:0','left:0',
+    'width:100%','height:100%',
+    'background:#000',
+    'z-index:9999',
+    'display:flex',
+    'flex-direction:column',
+    'align-items:center',
+    'justify-content:center',
+    'cursor:pointer',
+    'font-family:"Courier New",Courier,monospace',
+    'overflow:hidden'
+  ].join(';');
+
+  // --- Matrix rain canvas ---
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.35;';
+  overlay.appendChild(canvas);
+
+  // --- Terminal content ---
+  var terminal = document.createElement('div');
+  terminal.style.cssText = [
+    'position:relative',
+    'z-index:2',
+    'text-align:center',
+    'padding:40px',
+    'border:1px solid #00FF41',
+    'box-shadow:0 0 30px #00FF41',
+    'max-width:560px',
+    'width:90%'
+  ].join(';');
+
+  var lines = [
+    { text: 'RANTASH GALAXY NETWORK v1.0', color: '#00FF41', size: '13px', mb: '6px' },
+    { text: '================================', color: '#006600', size: '13px', mb: '18px' },
+    { text: 'CONNECTING TO ASHASHUA...', color: '#00FF41', size: '13px', mb: '4px' },
+    { text: 'DIMENSIONAL PORTAL: ONLINE', color: '#00FF41', size: '13px', mb: '4px' },
+    { text: 'CREAMPOP RESERVES: NOMINAL', color: '#00FF41', size: '13px', mb: '4px' },
+    { text: 'WOOKIE POODLE THREAT LEVEL: ELEVATED', color: '#ffff00', size: '13px', mb: '18px' },
+    { text: 'WARNING: RUFFLECRUMBS IN VICINITY', color: '#ff4444', size: '13px', mb: '18px' },
+    { text: '================================', color: '#006600', size: '13px', mb: '18px' },
+  ];
+
+  lines.forEach(function(l) {
+    var p = document.createElement('div');
+    p.textContent = l.text;
+    p.style.cssText = 'color:' + l.color + ';font-size:' + l.size + ';margin-bottom:' + l.mb + ';letter-spacing:2px;';
+    terminal.appendChild(p);
+  });
+
+  // Prompt line with blinking cursor
+  var prompt = document.createElement('div');
+  prompt.style.cssText = 'color:#00FF41;font-size:18px;letter-spacing:2px;margin-top:8px;';
+  prompt.innerHTML = '&gt; ENTER ASHASHUA<span id="blink-cursor" style="display:inline-block;width:11px;height:18px;background:#00FF41;margin-left:3px;vertical-align:middle;"></span>';
+  terminal.appendChild(prompt);
+
+  var hint = document.createElement('div');
+  hint.textContent = '[ CLICK ANYWHERE OR PRESS ENTER ]';
+  hint.style.cssText = 'color:#006600;font-size:11px;letter-spacing:2px;margin-top:22px;';
+  terminal.appendChild(hint);
+
+  overlay.appendChild(terminal);
+  document.body.insertBefore(overlay, document.body.firstChild);
+
+  // --- Blinking cursor ---
+  var cursorVisible = true;
+  var blinkInterval = setInterval(function() {
+    var c = document.getElementById('blink-cursor');
+    if (c) { cursorVisible = !cursorVisible; c.style.opacity = cursorVisible ? '1' : '0'; }
+  }, 530);
+
+  // --- Matrix rain ---
+  var ctx = canvas.getContext('2d');
+  var W, H, cols, drops;
+  var chars = 'ASHASHUA01アイウエオカキクケコサシスセソタチツテトナニヌネノ$#@%&RUFFLECRUMB';
+
+  function initCanvas() {
+    W = canvas.width  = overlay.offsetWidth;
+    H = canvas.height = overlay.offsetHeight;
+    cols  = Math.floor(W / 16);
+    drops = [];
+    for (var i = 0; i < cols; i++) drops[i] = Math.random() * -50;
+  }
+  initCanvas();
+  window.addEventListener('resize', initCanvas);
+
+  var rainInterval = setInterval(function() {
+    ctx.fillStyle = 'rgba(0,0,0,0.05)';
+    ctx.fillRect(0, 0, W, H);
+    ctx.font = '14px "Courier New",monospace';
+    for (var i = 0; i < cols; i++) {
+      var ch = chars[Math.floor(Math.random() * chars.length)];
+      // Leading character brighter
+      ctx.fillStyle = '#aaffaa';
+      ctx.fillText(ch, i * 16, drops[i] * 16);
+      // Trail
+      ctx.fillStyle = '#00FF41';
+      ctx.fillText(ch, i * 16, (drops[i] - 1) * 16);
+      if (drops[i] * 16 > H && Math.random() > 0.975) drops[i] = 0;
+      drops[i] += 0.5;
+    }
+  }, 40);
+
+  // --- Enter sequence ---
+  var entering = false;
+  function enter() {
+    if (entering) return;
+    entering = true;
+    clearInterval(blinkInterval);
+    clearInterval(rainInterval);
+
+    // Swap prompt text to "executing" message
+    prompt.innerHTML = '&gt; INITIALIZING DIMENSIONAL PORTAL...';
+    hint.style.display = 'none';
+
+    setTimeout(function() {
+      prompt.innerHTML = '&gt; ACCESS GRANTED. WELCOME TO ASHASHUA.';
+    }, 600);
+
+    setTimeout(function() {
+      // Fade out overlay
+      overlay.style.transition = 'opacity 1s ease';
+      overlay.style.opacity = '0';
+      // Start music on this user gesture
+      audio.play().catch(function(){});
+    }, 1400);
+
+    setTimeout(function() {
+      overlay.style.display = 'none';
+    }, 2500);
+  }
+
+  overlay.addEventListener('click', enter);
+  document.addEventListener('keydown', function(e) {
+    if ((e.key === 'Enter' || e.keyCode === 13) && !entering) enter();
   });
 });
 
@@ -45,7 +186,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 <body background="backrounds/x.gif" bgcolor="#000037" text="#FF00FF" link="#00BCFF" vlink="#0000FF" alink="#FFFF00" bgproperties="fixed">
 
-<p align="center"><strong><em><font color="#00FFFF">This site was last updated on: 03/08/26 06:48:12 PM</font></em></strong></p>
+<p align="center"><strong><em><font color="#00FFFF">This site was last updated on: 03/08/26 07:01:18 PM</font></em></strong></p>
 
 <div align="center">
 

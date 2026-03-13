@@ -8,6 +8,41 @@
   A:hover { color:#ff00ff }
 //-->
 </style>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var audio = new Audio('mp3/01. Secret of Mana.mp3');
+  audio.loop = true;
+  var unlocked = false;
+  var playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function() {
+      function unlock() {
+        if (unlocked) return;
+        unlocked = true;
+        audio.play().catch(function(){});
+        document.removeEventListener('click', unlock);
+        document.removeEventListener('keydown', unlock);
+        document.removeEventListener('scroll', unlock);
+      }
+      document.addEventListener('click', unlock);
+      document.addEventListener('keydown', unlock);
+      document.addEventListener('scroll', unlock);
+    });
+  }
+  var btn = document.createElement('button');
+  btn.textContent = '\u266a';
+  btn.title = 'Toggle music';
+  btn.style.cssText = 'position:fixed;top:8px;left:8px;z-index:1000;background:#000;color:#00FF41;border:1px solid #00FF41;font-size:14px;padding:3px 7px;cursor:pointer;font-family:"Courier New",Courier,monospace;opacity:0.75;line-height:1;';
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    unlocked = true;
+    if (audio.paused) { audio.play().catch(function(){}); } else { audio.pause(); }
+  });
+  audio.addEventListener('play', function() { btn.style.opacity = '0.9'; btn.style.color = '#00FF41'; });
+  audio.addEventListener('pause', function() { btn.style.opacity = '0.5'; btn.style.color = '#555'; });
+  document.body.appendChild(btn);
+});
+</script>
 </head>
 
 <body background="backrounds/backroundblu.gif" bgcolor="#FFFFFF" text="#00FF00" link="#00FF00" vlink="#00FFFF" alink="#FFFFFF" bgproperties="fixed">
@@ -96,6 +131,36 @@
   </tr>
 </table>
 </div>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p align="center"><img src="images_dalle/bydo-x.png" alt="The Bydo-X" style="width: 40%; height: auto;"></p>
+<p align="center"><font color="#84F92D"><em><small>This depiction was approximated using primitive Earth-based imaging technology</small></em></font></p>
+
+<p><font color="#00FF00" size="5">The Bydo-X</font></p>
+
+<ul>
+  <li><font color="#00FF00" size="4">Nobody on Ashashua can agree on what exactly a Bydo-X is, and frankly, the ones who claim to know best are probably the least trustworthy people you could ask. What is agreed upon is this: one day they weren't here, and then they were. Scholars believe they arrived through a dimensional portal, though this theory is complicated by the fact that the Bydo-X does not appear to be from anywhere in particular. It shifts. It transforms. It phases between shapes that your brain struggles to file away as a memory. You will see one, look away, and find yourself unable to describe what you just saw. This is not a coincidence.</font></li>
+  <li><font color="#00FF00" size="4">The Bydo-X is not exactly a creature, and it is not exactly a machine. It is not exactly anything. It has been observed as a sleek pale gold projectile, a sprawling mechanical lattice, and something else entirely &mdash; sometimes within the same encounter. The only consistent quality is that it is always watching, even when it appears to have no eyes.</font></li>
+  <li><font color="#00FF00" size="4">They tend to operate near the forests outside Corrath, which is unfortunate for everyone. They are repelled by river rock, which nobody predicted, and which the Bydo-X itself seems genuinely annoyed about. Attempts to study them have failed because they do not hold still long enough to be studied, and also because the researchers keep disappearing.</font></li>
+  <li><font color="#00FF00" size="4">Gloomwing has no comment at this time.</font></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p align="center"><img src="images_dalle/velshara.png" alt="Velshara" style="width: 40%; height: auto;"></p>
+<p align="center"><font color="#84F92D"><em><small>This depiction was approximated using primitive Earth-based imaging technology</small></em></font></p>
+
+<p><font color="#00FF00" size="5">Velshara</font></p>
+
+<ul>
+  <li><font color="#00FF00" size="4">Velshara is one of those people that you immediately suspect has already figured you out before you have opened your mouth. She probably has. Born and raised in Corrath, she has spent most of her life navigating the chaotic commerce and general absurdity of the city with a composure that frankly makes everyone around her slightly nervous. Nobody is entirely sure what her official title is, and she has never volunteered the information. The working assumption is that it is something important.</font></li>
+  <li><font color="#00FF00" size="4">She was first encountered by a portal visitor on the forest road outside Corrath under circumstances that neither party has fully explained. What is known is that the encounter involved a Bydo-X, a handful of river rocks, and a waterfall. Velshara has described the experience as &quot;fine.&quot; The portal visitor has been somewhat less concise about it.</font></li>
+  <li><font color="#00FF00" size="4">She is not warm, exactly, but she is fair. She will extend her hand to a stranger in the middle of a smog-shrouded forest without flinching, which on Ashashua is considered either an act of great courage or great confidence, depending on who you ask. On Ashashua these are generally the same thing.</font></li>
+  <li><font color="#00FF00" size="4">Her relationship with Corrath is complicated. She loves it the way you love something that constantly disappoints you but remains, stubbornly, the most interesting thing around. She has been offered a Creampop by no fewer than four people of great authority, which tells you everything you need to know.</font></li>
+</ul>
 
 <p>&nbsp;</p>
 

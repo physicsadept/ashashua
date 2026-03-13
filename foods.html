@@ -6,6 +6,41 @@
 <style><!--
   A:hover { color:#800080 }
 //--></style>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var audio = new Audio('mp3/01. Secret of Mana.mp3');
+  audio.loop = true;
+  var unlocked = false;
+  var playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function() {
+      function unlock() {
+        if (unlocked) return;
+        unlocked = true;
+        audio.play().catch(function(){});
+        document.removeEventListener('click', unlock);
+        document.removeEventListener('keydown', unlock);
+        document.removeEventListener('scroll', unlock);
+      }
+      document.addEventListener('click', unlock);
+      document.addEventListener('keydown', unlock);
+      document.addEventListener('scroll', unlock);
+    });
+  }
+  var btn = document.createElement('button');
+  btn.textContent = '\u266a';
+  btn.title = 'Toggle music';
+  btn.style.cssText = 'position:fixed;top:8px;left:8px;z-index:1000;background:#000;color:#00FF41;border:1px solid #00FF41;font-size:14px;padding:3px 7px;cursor:pointer;font-family:"Courier New",Courier,monospace;opacity:0.75;line-height:1;';
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    unlocked = true;
+    if (audio.paused) { audio.play().catch(function(){}); } else { audio.pause(); }
+  });
+  audio.addEventListener('play', function() { btn.style.opacity = '0.9'; btn.style.color = '#00FF41'; });
+  audio.addEventListener('pause', function() { btn.style.opacity = '0.5'; btn.style.color = '#555'; });
+  document.body.appendChild(btn);
+});
+</script>
 </head>
 
 <body background="backrounds/foodback.gif" bgcolor="#FFFFFF" link="#808000" bgproperties="fixed" vlink="#000080">

@@ -1,0 +1,66 @@
+<html>
+
+<head>
+<title>Corrath</title>
+<bgsound src="midi/pureland.mid" loop="infinite">
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var audio = new Audio('mp3/01. Secret of Mana.mp3');
+  audio.loop = true;
+  var unlocked = false;
+  var playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function() {
+      function unlock() {
+        if (unlocked) return;
+        unlocked = true;
+        audio.play().catch(function(){});
+        document.removeEventListener('click', unlock);
+        document.removeEventListener('keydown', unlock);
+        document.removeEventListener('scroll', unlock);
+      }
+      document.addEventListener('click', unlock);
+      document.addEventListener('keydown', unlock);
+      document.addEventListener('scroll', unlock);
+    });
+  }
+  var btn = document.createElement('button');
+  btn.textContent = '\u266a';
+  btn.title = 'Toggle music';
+  btn.style.cssText = 'position:fixed;top:8px;left:8px;z-index:1000;background:#000;color:#00FF41;border:1px solid #00FF41;font-size:14px;padding:3px 7px;cursor:pointer;font-family:"Courier New",Courier,monospace;opacity:0.75;line-height:1;';
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    unlocked = true;
+    if (audio.paused) { audio.play().catch(function(){}); } else { audio.pause(); }
+  });
+  audio.addEventListener('play', function() { btn.style.opacity = '0.9'; btn.style.color = '#00FF41'; });
+  audio.addEventListener('pause', function() { btn.style.opacity = '0.5'; btn.style.color = '#555'; });
+  document.body.appendChild(btn);
+});
+</script>
+</head>
+
+<body bgcolor="#000000" text="#FFCC44" link="#FF9900" vlink="#CC8800" bgproperties="fixed">
+
+<p><em><strong><font color="#FFCC44" size="5">Corrath</font></strong></em></p>
+
+<p align="center"><img src="images_dalle/corrath.png" alt="Corrath" style="width: 50%; height: auto;"></p>
+<p align="center"><em><small>This depiction was approximated using primitive Earth-based imaging technology</small></em></p>
+
+<p>&nbsp;</p>
+
+<p><font color="#FFCC44" size="4"><strong>Corrath is the beating, slightly irregular heart of Ashashua. It is loud, it is crowded, and it smells predominantly of Creampops with an undertone of something you cannot identify and probably should not investigate. If you have arrived here through a dimensional portal and are experiencing disorientation, confusion, or an overwhelming sense that everyone around you knows something you do not &mdash; congratulations, you are having the authentic Corrath experience.</strong></font></p>
+
+<p><font color="#FFCC44" size="4"><strong>The city has existed for as long as anyone can remember, and longer than most people care to research. It grew the way most great cities grow: without anyone particularly planning it, around things that people wanted. In Corrath's case, those things were Creampops, commerce, and the vague but persistent feeling that this was where everything important was happening. For the most part this feeling is correct.</strong></font></p>
+
+<p><font color="#FFCC44" size="4"><strong>The market district is the undisputed center of Corrath's chaos. Creampops are traded, argued over, occasionally weaponized in disputes that escalate faster than anyone intends. It is customary to offer a Creampop to anyone of authority in Corrath, which is complicated by the fact that Corrath has an unusually high density of authority figures per square mile. Newcomers are advised to bring extras.</strong></font></p>
+
+<p><font color="#FFCC44" size="4"><strong>On the outskirts of Corrath, where the city's noise fades into forest, the atmosphere changes considerably. The trees are older here. The roads are quieter. It is the kind of place where you might have an unexpected encounter that changes your understanding of why you came here in the first place. It is also where the Bydo-X have been spotted most frequently, which the city's tourism board has chosen not to prominently advertise.</strong></font></p>
+
+<p><font color="#FFCC44" size="4"><strong>The Tower Of Lost Souls is technically within Corrath's jurisdiction. Gloomwing pays no taxes.</strong></font></p>
+
+<p>&nbsp;</p>
+
+<p><a href="index.html"><img src="images/homepage.gif" alt="[Homepage button - image not recovered]" border="0" width="115" height="22"></a></p>
+</body>
+</html>

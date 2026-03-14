@@ -104,8 +104,8 @@ function submitPoll() {
   }
   html += '</table>';
   html += '<p align="center"><font color="#00FFFF" size="2"><em>' + total.toLocaleString() + ' total votes</em></font></p>';
-
   document.getElementById("poll-form-area").innerHTML = html;
+  document.getElementById("poll-note-area").innerHTML = '<blockquote><p><font face="Courier New, Courier, monospace" color="#00FF41" size="2"><em>Galderian 51 Archive &mdash; Creature Analytics Division<br>Vote tallies are independently estimated by a team of Earth analysts who have been studying these creatures from a comfortable distance since 1999. Results may vary depending on atmospheric humidity and the current location of Ashashua\'s moons.</em></font></p></blockquote>';
   return false;
 }
 </script>
@@ -207,9 +207,7 @@ window.addEventListener('DOMContentLoaded', function() {
 </table>
 </center></div>
 
-<p align="center"><font color="#00FFFF" size="2"><em>Vote tallies are independently estimated by a team of Earth analysts who have been
-studying these creatures from a comfortable distance since 1999. Results may vary depending
-on atmospheric humidity and the current location of Ashashua's moons.</em></font></p>
+<div id="poll-note-area"></div>
 
 <!-- End Poll Code -->
 

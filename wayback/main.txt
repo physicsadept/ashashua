@@ -2,15 +2,15 @@
 <html>
 
 <head><script src="//archive.org/includes/athena.js" type="text/javascript"></script>
-<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app244.us.archive.org';v.server_ms=740;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app257.us.archive.org';v.server_ms=370;archive_analytics.send_pageview({});});</script>
 <script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
 <script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC" charset="utf-8"></script>
 <script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
 <script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
 <script type="text/javascript">
     __wm.init("https://web.archive.org/web");
-  __wm.wombat("http://members.tripod.com:80/WookiePoodle/main.htm","20000307232023","https://web.archive.org/","web","https://web-static.archive.org/_static/",
-	      "952471223");
+  __wm.wombat("http://members.tripod.com:80/WookiePoodle/main.htm","20000603095536","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "960026136");
 </script>
 <link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
 <link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
@@ -23,7 +23,7 @@
 <div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
 <div id="donato" style="position:relative;width:100%;height:0;">
   <div id="donato-base">
-    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20000307232023/http%3A//members.tripod.com/WookiePoodle/main.htm"
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20000603095536/http%3A//members.tripod.com/WookiePoodle/main.htm"
 	    scrolling="no" frameborder="0" style="width:100%; height:100%">
     </iframe>
   </div>
@@ -33,11 +33,11 @@
       <a href="/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0" /></a>
     </div>
     <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
-      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://members.tripod.com/WookiePoodle/main.htm" onfocus="this.focus();this.select();" style="flex:1;"/><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20000307232023" /><input type="submit" value="Go" />
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://members.tripod.com/WookiePoodle/main.htm" onfocus="this.focus();this.select();" style="flex:1;"/><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20000603095536" /><input type="submit" value="Go" />
       </form>
       <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
                 <div class="s" id="wm-nav-captures" style="flex:1;">
-                    <a class="t" href="/web/20000307232023*/http://members.tripod.com/WookiePoodle/main.htm" title="See a list of every capture for this URL">11 captures</a>
+                    <a class="t" href="/web/20000603095536*/http://members.tripod.com/WookiePoodle/main.htm" title="See a list of every capture for this URL">11 captures</a>
           <div class="r" title="Timespan for captures of this URL">02 Oct 1999 - 10 Jan 2005</div>
           </div>
         <div class="k">
@@ -54,20 +54,20 @@
         <tbody>
           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
           <tr class="m">
-            <td class="b" nowrap="nowrap">Feb</td>
-            <td class="c" id="displayMonthEl" title="You are here: 23:20:23 Mar 07, 2000">MAR</td>
-            <td class="f" nowrap="nowrap">Apr</td>
+            <td class="b" nowrap="nowrap">May</td>
+            <td class="c" id="displayMonthEl" title="You are here: 09:55:36 Jun 03, 2000">JUN</td>
+            <td class="f" nowrap="nowrap">Jul</td>
           </tr>
           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
           <tr class="d">
             <td class="b" nowrap="nowrap"><span class="ta"></span></td>
-            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 23:20:23 Mar 07, 2000">07</td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 09:55:36 Jun 03, 2000">03</td>
             <td class="f" nowrap="nowrap"><span class="ta"></span></td>
           </tr>
           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
           <tr class="y">
             <td class="b" nowrap="nowrap">1999</td>
-            <td class="c" id="displayYearEl" title="You are here: 23:20:23 Mar 07, 2000">2000</td>
+            <td class="c" id="displayYearEl" title="You are here: 09:55:36 Jun 03, 2000">2000</td>
             <td class="f" nowrap="nowrap">2001</td>
           </tr>
         </tbody>
@@ -90,7 +90,7 @@
         <a id="wm-tb-close" href="#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
       </div>
       <div id="wm-share" class="xxs">
-        <a href="/web/20000307232023/http://web.archive.org/screenshot/http://members.tripod.com/WookiePoodle/main.htm"
+        <a href="/web/20000603095536/http://web.archive.org/screenshot/http://members.tripod.com/WookiePoodle/main.htm"
            id="wm-screenshot"
            title="screenshot">
           <span class="wm-icon-screen-shot"></span>
@@ -98,8 +98,8 @@
         <a href="#" id="wm-video" title="video">
           <span class="iconochive-movies"></span>
         </a>
-        <a id="wm-share-facebook" href="#" data-url="https://web.archive.org/web/20000307232023/http://members.tripod.com:80/WookiePoodle/main.htm" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
-        <a id="wm-share-twitter" href="#" data-url="https://web.archive.org/web/20000307232023/http://members.tripod.com:80/WookiePoodle/main.htm" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+        <a id="wm-share-facebook" href="#" data-url="https://web.archive.org/web/20000603095536/http://members.tripod.com:80/WookiePoodle/main.htm" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="#" data-url="https://web.archive.org/web/20000603095536/http://members.tripod.com:80/WookiePoodle/main.htm" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
       </div>
       <div style="padding-right:2px;text-align:right;white-space:nowrap;">
         <a id="wm-expand" class="wm-btn wm-closed" href="#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
@@ -136,9 +136,9 @@
       <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading" /></div>
     </div>
     </div>
-  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20000307232023/http://members.tripod.com:80/WookiePoodle/main.htm</div>
+  </div></div></div></div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20000603095536/http://members.tripod.com:80/WookiePoodle/main.htm</div>
 <script type="text/javascript">//<![CDATA[
-__wm.bt(775,27,25,2,"web","http://members.tripod.com/WookiePoodle/main.htm","20000307232023",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+__wm.bt(775,27,25,2,"web","http://members.tripod.com/WookiePoodle/main.htm","20000603095536",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
   __wm.rw(1);
 //]]></script>
 <!-- END WAYBACK TOOLBAR INSERT -->
@@ -153,97 +153,132 @@ __wm.bt(775,27,25,2,"web","http://members.tripod.com/WookiePoodle/main.htm","200
 <meta http-equiv="Site-Exit" content="revealTrans(Duration=2.0,Transition=3)">
 </head>
 
-<body background="https://web.archive.org/web/20000307232023im_/http://members.tripod.com/WookiePoodle/backrounds/x.gif" bgcolor="#000037" text="#FF00FF" link="#00BCFF" vlink="#0000FF" alink="#FFFF00" bgproperties="fixed">
+<body background="https://web.archive.org/web/20000603095536im_/http://members.tripod.com/WookiePoodle/backrounds/x.gif" bgcolor="#000037" text="#FF00FF" link="#00BCFF" vlink="#0000FF" alink="#FFFF00" bgproperties="fixed">
+<!--Begin JavaScript roadmap code.  If editing downloaded HTML source, delete
+ this portion.-->
+<script language="JavaScript">
+
+<!--
+
+function TripodShowPopup() {
+	// vars for browser detect
+	var bName=navigator.appName;
+	var bVer=parseInt(navigator.appVersion);
+	// open the popup window. stick a timestamp to foil caching. Some versions of Netscape do not automatically load
+        // the page specified by the URL paramter of wondow.open(). As such, we create the window empty, then explicitly load
+        // the page with the location object
+	var now = new Date();
+	var popupURL = "/adm/popup/roadmap.shtml?"+"member_name=wookiepoodle&path=main.htm&client_ip=4.16.19.55&ts=953864005&ad_type=POPUP&id=0a7796e55ad800d1ec27ba6682c298ab";
+	var popupName = "TripodPopup";
+	// browser detect loads differently sized window for netscape 3.x
+	if (bName=="Netscape" && bVer<=3) {
+	  	var popup = window.open("", popupName,'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=614,height=116');
+	} else {
+	  	var popup = window.open("", popupName,'toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,resizable=0,width=604,height=96');
+	}
+	popup.location = popupURL;
+
+}
+
+TripodShowPopup();
+
+// -->
+</script>
+<!--End inserted JavaScript code.-->
+
 
 <p align="center"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <em><font color="#00FFFF">This site was last updated on:<!--webbot bot="Timestamp"
-startspan s-type="EDITED" s-format="%m/%d/%y %I:%M:%S %p" -->07/20/99 10:26:23 PM<!--webbot bot="Timestamp"
-i-checksum="28439" endspan --></font></em></strong></p>
+startspan s-type="EDITED" s-format="%m/%d/%y %I:%M:%S %p" -->03/23/00 07:09:36 PM<!--webbot bot="Timestamp"
+i-checksum="26972" endspan --></font></em></strong></p>
 <div align="center"><center>
 
 <table border="0" width="200">
   <tr>
-    <td align="center" valign="top" width="100"><p align="left"><br>
-    <font size="5"><b>Ashashua</b></font></p>
-    <p>Kenny Burchett<br>
-    Male <br>
-    Age 22<br>
-    <br>
-    Send E-Mail to me at <a href="https://web.archive.org/web/20000307232023/mailto:Ashashua@theglobe.com">Ashashua!!</a></p>
-    <p><a href="https://web.archive.org/web/20000307232023/mailto:Ashashua@theglobe.com"><img src="https://web.archive.org/web/20000307232023im_/http://members.tripod.com/WookiePoodle/animated/emove1.gif" border="0" width="100" height="40"></a></td>
-    <td valign="top"><p align="center"><img src="https://web.archive.org/web/20000307232023im_/http://members.tripod.com/WookiePoodle/pics/ashashua.jpg" alt="Image of Ashashua" align="left" hspace="0" width="422" height="317"> </td>
+    <td align="center" valign="top" width="100"><p align="left"><font size="5" color="#FFFFFF"><em><b>Ashashua!!</b></em></font></p>
+    <p align="right">KennyBurchett&nbsp;&nbsp;&nbsp; </p>
+    <p align="left">&nbsp;&nbsp;&nbsp; &quot;WookieP&quot;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Male <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Age 22</p>
+    <p align="left">&nbsp;</p>
+    <p><a href="https://web.archive.org/web/20000603095536/mailto:Ashashua@theglobe.com"><img src="https://web.archive.org/web/20000603095536im_/http://members.tripod.com/WookiePoodle/animated/emove1.gif" border="0" width="100" height="40"></a></td>
+    <td valign="top"><p align="center"><img src="https://web.archive.org/web/20000603095536im_/http://members.tripod.com/WookiePoodle/pics/ashashua.jpg" alt="Image of Ashashua" align="left" hspace="0" width="422" height="317"> </td>
   </tr>
   <tr>
-    <td valign="top" colspan="2"><p align="center"><em><b>Some of my friends</b>:</em> <a href="https://web.archive.org/web/20000307232023/http://home.earthlink.net/~chrisricci/">FoxWing</a> <a href="https://web.archive.org/web/20000307232023/http://members.theglobe.com/wicced">Wicced</a> <a href="https://web.archive.org/web/20000307232023/http://www.bigmog.com/">BigMog</a>&nbsp;<a href="https://web.archive.org/web/20000307232023/http://members.xoom.com/Masta_Slay/index.html">T-Money</a>&nbsp;<a href="https://web.archive.org/web/20000307232023/http://www.geocities.com/heartland/9473/scabys.html">Scaby</a> <a href="https://web.archive.org/web/20000307232023/http://members.xoom.com/HedzRed/">HedzRed</a> <a href="https://web.archive.org/web/20000307232023/http://home.earthlink.net/~dheriford/index.html">Scribes</a></td>
+    <td valign="top" colspan="2"><p align="center"><em><b>Some of my friends</b>:</em> <a href="https://web.archive.org/web/20000603095536/http://home.earthlink.net/~chrisricci/">FoxWing</a> <a href="https://web.archive.org/web/20000603095536/http://www.bigmog.com/">BigMog</a>&nbsp;<a href="https://web.archive.org/web/20000603095536/http://members.xoom.com/Masta_Slay/index.html">T-Money</a>&nbsp;<a href="https://web.archive.org/web/20000603095536/http://www.geocities.com/heartland/9473/scabys.html">Scaby</a> <a href="https://web.archive.org/web/20000603095536/http://members.xoom.com/HedzRed/">HedzRed</a> <a href="https://web.archive.org/web/20000603095536/http://home.earthlink.net/~dheriford/index.html">Scribes</a> <a href="https://web.archive.org/web/20000603095536/http://www.geocities.com/tisk85">:Eden</a></td>
   </tr>
 </table>
 </center></div>
 
 <blockquote>
-  <p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome!!
+  <p align="center"><font color="#8080FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome!!
   You have successfully landed on Ashashua!!! Not many people have made it here so feel
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; privileged!Ashashua is known for it's famous Wookie
   Poodles(descendants of the Wookie), Reemers, Excellent variety of Stroodles, and
-  Creampops!!! Forget not the ever famous &quot;Tower Of Lost Souls&quot;</p>
-  <p>&nbsp;</p>
+  Creampops!!! Forget not the ever famous &quot;Tower Of Lost Souls&quot;</font></p>
+  <p align="center"><font color="#00FFFF"><marquee width="50%" border="0">Below is a creampop!! People on Ashashua love these!!mmmmm yummy!</marquee></font></p>
 </blockquote>
 
-<p align="center"><img src="https://web.archive.org/web/20000307232023im_/http://members.tripod.com/WookiePoodle/animated/b3btwr.gif" width="36" height="28"></p>
+<p align="center"><img src="https://web.archive.org/web/20000603095536im_/http://members.tripod.com/WookiePoodle/animated/b3btwr.gif" width="36" height="28"></p>
 
-<p align="center"><font color="#00FFFF"><marquee width="50%" border="0">Above is a creampop!! People on Ashashua love these!!mmmmm yummy!</marquee></font></p>
-
-<p align="center">&nbsp;</p>
-
-<blockquote>
-  <blockquote>
-    <blockquote>
-      <p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do you want
-      to know where it all started? The name of Ashashua, where did it come from? Where am I?
-      What is Ashashua? This is weird....Just click on the link below to get to know a little
-      history on Ashashua.</p>
-      <p align="center"><a href="https://web.archive.org/web/20000307232023/http://members.tripod.com/WookiePoodle/name.htm">The Beginning
-      years</a></p>
-    </blockquote>
-  </blockquote>
-</blockquote>
-
-<table border="0" width="100%">
-  <tr>
-    <td width="100%"><a href="https://web.archive.org/web/20000307232023/http://members.xoom.com/ashashua/video/moons.avi"><img src="https://web.archive.org/web/20000307232023im_/http://members.tripod.com/WookiePoodle/animated/moon.gif" alt="moon.gif (10332 bytes)" border="0" width="72" height="72"></a>&nbsp; Click on the
-    moon to your left to view a short, time lapsed video clip of Ashashua surrounded by four
-    of it's many strange moons in outer space! If you wish to <a href="https://web.archive.org/web/20000307232023/mailto:Ashashua@theglobe.com">E-mail</a> me with comments regarding the quality of
-    this clip, please be gentle, it's my first homemade video. The video was created by myself
-    with the assistance of a friend of mine named <a href="https://web.archive.org/web/20000307232023/mailto:Fox@usa.net">Fox</a>.</td>
-  </tr>
-</table>
-
-<p>&nbsp;</p>
-
-<p align="center">Check out Ashashua's creatures, exotic foods, places, planetary
-locations, also you may take an interest in the top ten greatest hits on Ashashua, or you
-can even vote for your favorite Ashashuain creature! Be careful if you dare to go see the
-outcasts on Asahshua!</p>
+<p align="center"><font color="#8080FF">Check out Ashashua's creatures, exotic foods,
+places, planetary locations, also you may take an interest in the top ten greatest hits on
+Ashashua, or you can even vote for your favorite Ashashuain creature! Be careful if you
+dare to go see the outcasts on Asahshua!</font></p>
 
 <table border="1" width="100%">
   <tr>
-    <td width="100%"><p align="center">Hey, why don't you go visit the&nbsp; <a href="https://web.archive.org/web/20000307232023/http://members.xoom.com/ashashua/tree/Tree.html">Tree</a> Of Uselessness!</td>
+    <td width="100%"><p align="center">Hey, why don't you go visit the&nbsp; <a href="https://web.archive.org/web/20000603095536/http://members.xoom.com/ashashua/tree/Tree.html">Tree</a> Of Uselessness!</td>
   </tr>
 </table>
 <div align="center"><center>
 
 <table border="0" width="750">
   <tr>
-    <td valign="top"><a href="https://web.archive.org/web/20000307232023/http://members.tripod.com/WookiePoodle/creatures.htm">Creatures</a><p><a href="https://web.archive.org/web/20000307232023/http://members.tripod.com/WookiePoodle/foods.htm">Exotic Foods</a></p>
-    <p><a href="https://web.archive.org/web/20000307232023/http://members.tripod.com/WookiePoodle/places.htm">Places</a></td>
-    <td align="center" valign="middle"><img src="https://web.archive.org/web/20000307232023im_/http://members.tripod.com/WookiePoodle/animated/runkid.gif" width="64" height="64"> <font color="#00FFFF">Geesch, Geesch, Geesch!!</font><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://web.archive.org/web/20000307232023/http://members.tripod.com/WookiePoodle/outcasts.htm">The Outcasts</a></td>
-    <td align="right" valign="top"><a href="https://web.archive.org/web/20000307232023/http://members.tripod.com/WookiePoodle/topten.htm">Top
-    Ten Musical Hits!</a><p><a href="https://web.archive.org/web/20000307232023/http://members.tripod.com/WookiePoodle/location.htm">Planetary
+    <td valign="top"><a href="https://web.archive.org/web/20000603095536/http://members.tripod.com/WookiePoodle/creatures.htm">Creatures</a><p><a href="https://web.archive.org/web/20000603095536/http://members.tripod.com/WookiePoodle/foods.htm">Exotic Foods</a></p>
+    <p><a href="https://web.archive.org/web/20000603095536/http://members.tripod.com/WookiePoodle/places.htm">Places</a></td>
+    <td align="center" valign="middle"><img src="https://web.archive.org/web/20000603095536im_/http://members.tripod.com/WookiePoodle/animated/runkid.gif" width="64" height="64"> <font color="#00FFFF">Geesch, Geesch, Geesch!!</font><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://web.archive.org/web/20000603095536/http://members.tripod.com/WookiePoodle/outcasts.htm">The Outcasts</a></td>
+    <td align="right" valign="top"><a href="https://web.archive.org/web/20000603095536/http://members.tripod.com/WookiePoodle/topten.htm">Our
+    Musical Hits!</a><p><a href="https://web.archive.org/web/20000603095536/http://members.tripod.com/WookiePoodle/location.htm">Planetary
     Locations</a></p>
-    <p><a href="https://web.archive.org/web/20000307232023/http://members.tripod.com/WookiePoodle/poll.htm">Creature Voting Poll!!</a></td>
+    <p><a href="https://web.archive.org/web/20000603095536/http://members.tripod.com/WookiePoodle/poll.htm">Creature Voting Poll!!</a></td>
   </tr>
 </table>
 </center></div>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p align="center"><font color="#8080FF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Do you want to know where it all started? The name of Ashashua, where did it come from?
+      Where am I? What is Ashashua? This is weird....Just click on the link below to get to know
+      a little history on Ashashua.</font></p>
+      <p align="center"><a href="https://web.archive.org/web/20000603095536/http://members.tripod.com/WookiePoodle/name.htm">The Beginning
+      years</a></p>
+      <table border="0" cellpadding="0" width="513">
+        <tr>
+          <td align="left" width="136"><a href="https://web.archive.org/web/20000603095536/http://members.tripod.com/WookiePoodle/mp3/Ashashua_Dream.mp3"><img src="https://web.archive.org/web/20000603095536im_/http://members.tripod.com/WookiePoodle/animated/dragon.gif" alt="dragon.gif (57901 bytes)" width="130" height="100"></a></td>
+          <td width="373" valign="middle" align="left">&nbsp;<p><font color="#8080FF">Ashashua now has a
+          techno remix&nbsp; to go along with it's insanity+1!! Click on the gif to the left to
+          download &quot;Ashashua Dream&quot; .Mp3 &nbsp; It was created by me (WookieP) on MTV's
+          Music Generator for PSX!! It's a techno mix with a little bit of trance, jungle, and even
+          some rock sounds. It fits the Ashashuaian style well, hope you enjoy it!! <big><strong>:)</strong></big></font></p>
+          <p>&nbsp;</td>
+        </tr>
+      </table>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="100%"><a href="https://web.archive.org/web/20000603095536/http://members.xoom.com/ashashua/video/moons.avi"><img src="https://web.archive.org/web/20000603095536im_/http://members.tripod.com/WookiePoodle/animated/moon.gif" alt="moon.gif (10332 bytes)" border="0" width="72" height="72"></a>&nbsp; <font color="#8080FF">Click on the moon to your left to view a short, time lapsed video clip of
+    Ashashua surrounded by four of it's many strange moons in outer space! If you wish to <a href="https://web.archive.org/web/20000603095536/mailto:Ashashua@theglobe.com">E-mail</a> me with comments regarding the quality of
+    this clip, please be gentle, it's my first homemade video. The video was created by myself
+    with the assistance of a friend of mine named <a href="https://web.archive.org/web/20000603095536/mailto:Fox@usa.net">Fox</a>.</font></td>
+  </tr>
+</table>
 
 <hr>
 
@@ -251,7 +286,7 @@ outcasts on Asahshua!</p>
   <tr>
     <td width="300"><font color="#FFFFFF">Warning! This site makes no sense whatsoever. May
     cause severe confusion. Some sentences, and phrases could possibly have no point.</font><p><font color="#00FFFF">© <font face="Symbol">ywlae</font> Geesch productions</font></td>
-    <td align="right" valign="middle" width="450"><font color="#FFFFFF">Best if viewed with: </font><a href="https://web.archive.org/web/20000307232023/http://www.microsoft.com/ie/logo.asp"><img src="https://web.archive.org/web/20000307232023im_/http://members.tripod.com/WookiePoodle/animated/ie4get_animated.gif" width="90" height="30"></a><p><font color="#00FFFF"><small><small><em>With 800x600 resolution</em></small></small>.</font><font color="#FF0000"> </font><font color="#00FFFF">i</font><font color="#FFFF80">n</font><font color="#FF0000"> </font><font color="#00FF00">1</font><font color="#C0C0C0">6 b</font><font color="#8080FF">it c</font><font color="#FF00FF">o</font><font color="#FF0080">l</font><font color="#FF0000">or</font></p>
+    <td align="right" valign="middle" width="450"><font color="#FFFFFF">Best if viewed with: </font><a href="https://web.archive.org/web/20000603095536/http://www.microsoft.com/ie/logo.asp"><img src="https://web.archive.org/web/20000603095536im_/http://members.tripod.com/WookiePoodle/animated/ie4get_animated.gif" width="90" height="30"></a><p><font color="#00FFFF"><small><small><em>With 800x600 resolution</em></small></small>.</font><font color="#FF0000"> </font><font color="#00FFFF">i</font><font color="#FFFF80">n</font><font color="#FF0000"> </font><font color="#00FF00">1</font><font color="#C0C0C0">6 b</font><font color="#8080FF">it c</font><font color="#FF00FF">o</font><font color="#FF0080">l</font><font color="#FF0000">or</font></p>
     <p><font color="#800040"><small><small>Nabisco ding!</small></small></font></td>
   </tr>
 </table>
@@ -259,8 +294,8 @@ outcasts on Asahshua!</p>
 </html>
 
 <!--
-     FILE ARCHIVED ON 23:20:23 Mar 07, 2000 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 15:21:57 Mar 14, 2026.
+     FILE ARCHIVED ON 09:55:36 Jun 03, 2000 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:31:52 Mar 14, 2026.
      JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
 
      ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
@@ -268,14 +303,14 @@ outcasts on Asahshua!</p>
 -->
 <!--
 playback timings (ms):
-  captures_list: 0.792
-  exclusion.robots: 0.063
-  exclusion.robots.policy: 0.05
-  esindex: 0.009
-  cdx.remote: 44.714
-  LoadShardBlock: 212.812 (3)
-  PetaboxLoader3.datanode: 408.768 (4)
-  PetaboxLoader3.resolve: 89.725 (2)
-  load_resource: 445.697
-  nav: 0.24 (6)
+  captures_list: 0.514
+  exclusion.robots: 0.04
+  exclusion.robots.policy: 0.031
+  esindex: 0.008
+  cdx.remote: 43.128
+  LoadShardBlock: 144.744 (3)
+  PetaboxLoader3.datanode: 128.612 (4)
+  PetaboxLoader3.resolve: 147.713 (2)
+  load_resource: 157.457
+  nav: 0.145 (6)
 -->

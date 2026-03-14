@@ -40,9 +40,11 @@ Pages were recovered from the [Wayback Machine](https://web.archive.org/) (circa
 ### 🎨 Deliberate Changes
 - **Black backgrounds**: Several pages originally used light or white backgrounds with colored text that rendered poorly (e.g. yellow on white). The following pages were given `bgcolor="#000000"` as an editorial decision: `location.html`, `outcasts.html`, `topten.html`, `poll.html`.
 - **DALL-E placeholder images**: Where original images could not be recovered from the Wayback Machine, AI-generated images were created as surrogates and stored in `images_dalle/`. Each DALL-E image is labeled beneath it: *"This depiction was approximated using primitive Earth-based imaging technology."* Affected pages: `creatures.html` (Bydo-X, Velshara), `foods.html`, `portal.html`, `happytrees.html`, `tools.html`, `outcasts.html` (Poochy), `corrath.html`, `archives.html` (Galderian1–5).
-- **`tree.html` placeholder**: The original Tree of Uselessness page was not recoverable. A placeholder page was created at the root level in the same visual style as the homepage, with the `keedlelaobe.gif` image and a note that the page is missing. (`tree/Tree.html` was flattened to `tree.html` to match the site's flat file structure.)
+- **`tree.html` placeholder**: The original Tree of Uselessness page was not recoverable. A placeholder page was created at the root level in the same visual style as the homepage, with `images/beane.jpg` as a visual stand-in and a Galderian 51 Archive scholar note acknowledging the missing content. (`tree/Tree.html` was flattened to `tree.html` to match the site's flat file structure.)
+- **`outcasts.html` CorinHA**: The CorinHA section was restored from the Wayback Machine source. The original `images/Corinha.jpg` was not recovered; the section renders with an alt-text placeholder.
 - **`&nbsp;` indentation spam removed**: The original pages used long chains of `&nbsp;` for paragraph indentation. These were removed for readability. The `when.html` spacers were intentionally preserved as they are the joke.
-- **Defunct external links**: Dead links to hosted files (e.g. the `moons.avi` video on xoom.com, the Winamp skin `.zip` on Tripod) have been commented out in the HTML with notes about the original URL.
+- **`location.html` video link restored**: The original xoom.com-hosted `moons.avi` video link was restored using the original Wayback Machine URL, pointing to the archived file at `web.archive.org`. The link is functional as a historical artifact.
+- **Defunct external links**: Other dead links to hosted files (e.g. the Winamp skin `.zip` on Tripod) have been commented out in the HTML with notes about the original URL.
 
 ### 🆕 New Content (2026 Expansion)
 - **Bydo-X** and **Velshara**: Two new creatures added to `creatures.html`, written in a new narrative voice that complements but is distinct from the original 1999 lore.
@@ -119,6 +121,7 @@ See [`TODO.md`](TODO.md) for the full tracked list. Broadly:
 - **Missing background images**: The `backrounds/` directory is largely absent. Most pages fall back to their `bgcolor` attribute. `outcasts.html` background (`plasma.jpg`) has been restored.
 - **`when.html` WAV**: The original `when.wav` ambient clip has not been recovered.
 - **DALL-E surrogates**: `archives.html` Sections VI and VII still need `Galderian6.png` and `Galderian7.png`.
+- **Missing original images**: `images/dragon.gif` (index.html dragon/mp3 section), `images/Corinha.jpg` (outcasts.html CorinHA), and `mp3/Ashashua_Dream.mp3` (linked from index.html) are not yet recovered.
 - **Tree of Uselessness**: Original content unknown. Dad's input needed.
 - **Winamp skin**: The original custom Ashashua Winamp skin may be recoverable from Wayback.
 - **Spiral animation review**: The `name.html` spiral entrance effect should be reviewed with dad.

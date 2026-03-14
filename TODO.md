@@ -4,34 +4,57 @@
 - [ ] **mailto address** — `Ashashua@theglobe.com` is a dead address. Decide whether to replace
       it with a real contact address, a modern form, or remove it entirely.
 
-## Music
-- [ ] **Homepage MIDI** — Currently using `forest-into-the-thick-of-it-7-.mid` as a stand-in
-      for the original `mana.mid`. Ask dad if he has a preferred song for the homepage background
-      music, or if the current choice is good.
-- [ ] **MP3 autoplay not working** — Background music (`mp3/01. Secret of Mana.mp3`) is wired up
-      in index.html but not audible in Chrome. Diagnose browser autoplay policy issues and find a
-      suitable UX solution (e.g. a play button, user-gesture trigger, or audio context unlock).
-- [ ] **Creatures page music** — `midi/creaturemusic.mid` was not recovered. Find or source an
-      appropriate atmospheric surrogate for the creatures page background music.
+## Background Images
+Original backgrounds were served from `backrounds/` (note original spelling) on Tripod.
+All pages reference these in their `<body background="...">` attribute; `bgcolor` provides a
+solid-color fallback for when the image is absent. Hunt Wayback Machine for each file below.
+Once recovered, drop the file into `backrounds/` (or `images/backgrounds/` — both work as long
+as the path in the HTML matches).
+
+| Page | Original file | Status |
+|------|--------------|--------|
+| `index.html` | `backrounds/x.gif` | ❌ missing |
+| `name.html` | `backrounds/x.gif` | ❌ missing (same file as index) |
+| `when.html` | `backrounds/flashstars.gif` | ❌ missing |
+| `location.html` | `backrounds/flashstars.gif` | ❌ missing (same file as when) |
+| `creatures.html` | `backrounds/backroundblu.gif` | ❌ missing |
+| `foods.html` | `backrounds/foodback.gif` | ❌ missing |
+| `happytrees.html` | `backrounds/lunar_jelly.jpg` | ❌ missing |
+| `places.html` | `backrounds/pearl.jpg` | ❌ missing |
+| `poll.html` | `backrounds/2d.jpg` | ❌ missing |
+| `portal.html` | `backrounds/multicolor.gif` | ❌ missing |
+| `tools.html` | `backrounds/marble_blue.gif` | ❌ missing |
+| `topten.html` | `backrounds/wback13.gif` | ❌ missing |
+| `outcasts.html` | `backrounds/plasma.jpg` | ✅ recovered → `images/backgrounds/plasma.jpg` |
+
+## MIDI / Audio Files
+Each page originally played a specific MIDI (or WAV) via `<bgsound>`. These are preserved as
+period-accurate HTML artifacts but none of the files exist yet. The modern music system
+(autoplay `mp3/01. Secret of Mana.mp3`) plays on all pages as a stand-in.
+Hunt replacements and drop into `midi/`; the `<bgsound>` tags are already wired up.
+
+| Page | Original file | Notes |
+|------|--------------|-------|
+| `index.html` | `midi/mana.mid` | Mana series — title/intro feel |
+| `when.html` | `midi/when.wav` | WAV, not MIDI — unique ambient clip |
+| `creatures.html` | `midi/creaturemusic.mid` | Atmospheric creature theme |
+| `foods.html` | `midi/food.mid` | |
+| `happytrees.html` | `midi/manatitle1.mid` | Mana series |
+| `location.html` | `midi/manafort.mid` | Mana series — fortress/map feel |
+| `name.html` | `midi/sombansh.mid` | Secret of Mana track |
+| `outcasts.html` | `midi/castle.mid` | Castle/dungeon feel |
+| `places.html` | `midi/pureland.mid` | Secret of Mana — Pure Land |
+| `portal.html` | `midi/pureland.mid` | Same as places |
+| `corrath.html` | `midi/pureland.mid` | Same as places (assigned during build) |
+| `poll.html` | `midi/somend.mid` | Secret of Mana ending theme |
+| `tools.html` | `midi/sombest.mid` | Secret of Mana |
+| `topten.html` | *(none — intentional)* | Page text explicitly notes no background music |
 
 ## Missing Assets
-- [ ] **Background tile `backrounds/x.gif`** — The original repeating background tile used on
-      index.html and name.html was not recovered. Find a suitable replacement or recreate it.
-      The current `bgcolor="#000037"` provides a fallback solid dark blue.
-- [ ] **`backrounds/` directory** — Many pages reference background images in `backrounds/`
-      (plasma.jpg, lunar_jelly.jpg, 2d.jpg, pearl.jpg, flashstars.gif, marble_blue.gif,
-      multicolor.gif, foodback.gif, backroundblu.gif, a015.jpg, abyss.jpg) that were not
-      recovered. Consider hunting the Wayback Machine for these individually.
-- [ ] **`midi/` directory** — Most MIDI files referenced across pages were not recovered.
-      The topten.html page links to 9 tracks, only `magnetremix.mid` is present. Consider
-      hunting replacements or sourcing originals. Missing files include: `creaturemusic.mid`,
-      `food.mid`, `pureland.mid` (places + portal), `manatitle1.mid` (happytrees),
-      `sombest.mid` (tools), `manafort.mid` (location), `sombansh.mid` (name),
-      `castle.mid` (outcasts), `somend.mid` (poll), `when.wav` (when),
-      and the topten.html tracklist.
+
 - [ ] **Creatures page original images** — Key creature images were not recovered from the
       original site. DALL-E placeholders are in use. Consider hunting Wayback Machine for:
-      `images/wookiepoodle.gif`, `images/ruffle.jpg`, `images/homepage.gif` (creatures page)
+      `images/wookiepoodle.gif`, `images/ruffle.jpg`
 - [ ] **Outcasts page — Poochy Getting Fried** — `images_dalle/poochyfry.png` is pending.
       Generate a DALL-E image of Poochy getting fried by Ralphie The Raven's Rufflecrumb.
 - [ ] **name.html spiral animation** — Review the FrontPage spiral entrance effect with dad
@@ -46,10 +69,15 @@
       (now defunct). Consider hunting Wayback Machine for this file.
 
 ## Pages
-- [ ] **Tree of Uselessness** (`tree/Tree.html`) — Original page was not recoverable.
-      A placeholder has been added. Reinvent this page in the future — ideally ask dad
+
+- [ ] **Tree of Uselessness** (`tree.html`) — Original page was not recoverable.
+      A placeholder is in place. Reinvent this page in the future — ideally ask dad
       what was originally on it.
+- [ ] **Archives illustrations** — `archives.html` Sections VI and VII still have placeholder
+      boxes. Drop `images_dalle/Galderian6.png` and `Galderian7.png` into `images_dalle/`
+      when ready and swap in the image tags.
 
 ## Future Content
-- [ ] **Ashashua 2.0 section** — A placeholder link has been added to the homepage nav.
-      Build out new content for this section in 2026.
+
+- [ ] **Ashashua 2.0 / new pages** — The Galderian 51 Archive (`archives.html`) is live.
+      Consider what other new content belongs in this section as the 2026 expansion continues.

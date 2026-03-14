@@ -5,6 +5,41 @@
 <style><!--
   A:hover { color:#c0c000 }
 //--></style>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var audio = new Audio('mp3/magnetremix.mp3');
+  audio.loop = true;
+  var unlocked = false;
+  var playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function() {
+      function unlock() {
+        if (unlocked) return;
+        unlocked = true;
+        audio.play().catch(function(){});
+        document.removeEventListener('click', unlock);
+        document.removeEventListener('keydown', unlock);
+        document.removeEventListener('scroll', unlock);
+      }
+      document.addEventListener('click', unlock);
+      document.addEventListener('keydown', unlock);
+      document.addEventListener('scroll', unlock);
+    });
+  }
+  var btn = document.createElement('button');
+  btn.textContent = '\u266a';
+  btn.title = 'Toggle music';
+  btn.style.cssText = 'position:fixed;top:8px;right:8px;z-index:1000;background:#000;color:#00FF41;border:1px solid #00FF41;font-size:14px;padding:3px 7px;cursor:pointer;font-family:"Courier New",Courier,monospace;opacity:0.75;line-height:1;';
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    unlocked = true;
+    if (audio.paused) { audio.play().catch(function(){}); } else { audio.pause(); }
+  });
+  audio.addEventListener('play', function() { btn.style.opacity = '0.9'; btn.style.color = '#00FF41'; });
+  audio.addEventListener('pause', function() { btn.style.opacity = '0.5'; btn.style.color = '#555'; });
+  document.body.appendChild(btn);
+});
+</script>
 </head>
 
 <body background="backrounds/a015.jpg" bgcolor="#000000" link="#00FFFF" vlink="#00FF00" bgproperties="fixed">
@@ -40,6 +75,12 @@ Just click on the midi's below!</strong></font></p>
 <p><font color="#FFFF00" size="4"><strong>(this page does not contain background music
 because then.....it would be too confusing, and only Ashashuaians are allowed to do that
 ... SOMETIMES...only when the humidity is bad)</strong></font></p>
+
+<blockquote>
+<p><font face="Courier New, Courier, monospace" color="#00FF41" size="2"><em>Galderian 51 Archive &mdash; Supplemental Filing: Musical Arts Division<br>
+Re: The above disclaimer<br>
+The Archive acknowledges the above policy and notes that it was composed during a period of significantly different atmospheric conditions. Rainfall this season has been, by every available measurement, incredible. The humidity is, in fact, extremely bad. The Archive has provisionally approved background music for this page on those grounds. These two facts are not unrelated. The Archive takes no further position on this matter.</em></font></p>
+</blockquote>
 
 <p>&nbsp;</p>
 

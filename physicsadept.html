@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<title>PhysicsAdept</title>
+<bgsound src="midi/mana.mid" loop="infinite">
+<style>
+<!--
+A:hover { color: #ff00ff }
+.archive-link { color: #B8963C; }
+.archive-link:hover { color: #00CCCC; }
+//-->
+</style>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var audio = new Audio('mp3/02 Title Song 2.mp3');
+  audio.loop = true;
+  var unlocked = false;
+  var playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function() {
+      function unlock() {
+        if (unlocked) return;
+        unlocked = true;
+        audio.play().catch(function(){});
+        document.removeEventListener('click', unlock);
+        document.removeEventListener('keydown', unlock);
+        document.removeEventListener('scroll', unlock);
+      }
+      document.addEventListener('click', unlock);
+      document.addEventListener('keydown', unlock);
+      document.addEventListener('scroll', unlock);
+    });
+  }
+  var btn = document.createElement('button');
+  btn.textContent = '\u266a';
+  btn.title = 'Toggle music';
+  btn.style.cssText = 'position:fixed;top:8px;right:8px;z-index:1000;background:#000;color:#00FF41;border:1px solid #00FF41;font-size:14px;padding:3px 7px;cursor:pointer;font-family:"Courier New",Courier,monospace;opacity:0.75;line-height:1;';
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    unlocked = true;
+    if (audio.paused) { audio.play().catch(function(){}); } else { audio.pause(); }
+  });
+  audio.addEventListener('play', function() { btn.style.opacity = '0.9'; btn.style.color = '#00FF41'; });
+  audio.addEventListener('pause', function() { btn.style.opacity = '0.5'; btn.style.color = '#555'; });
+  document.body.appendChild(btn);
+});
+</script>
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#B8963C" vlink="#B8963C" bgproperties="fixed">
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Courier New, Courier, monospace" color="#B8963C" size="6"><em><strong>PhysicsAdept</strong></em></font></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img src="images_dalle/alex.png" alt="PhysicsAdept" width="320" style="max-width:90%;"></p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+<p><font face="Courier New, Courier, monospace" color="#00FF41" size="2"><em>Galderian 51 Archive &mdash; Visitor Registry, Earth Division<br>
+<br>
+This entry is presently incomplete. The subject has been logged. A full transmission is expected to arrive before Ashashua reaches its next point of closest approach to Earth &mdash; the moment when the planet and its many strange moons (among them Miranda, Ariel, Oberon, and Titania, all of whom have views on the matter) stand nearest to this particular corner of the galaxy in their long and unhurried circuit. The Archive's Cartography Division places this event on or about the twenty-fifth day of the eleventh Earth month, 2026 C.E.<br>
+<br>
+(Before late November of this year, for the casual reader.)<br>
+<br>
+The Archive is patient. The deadline has been noted in the appropriate column. The Archive will not mention it again.</em></font></p>
+</blockquote>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><a href="index.html"><img src="images/homepage.gif" alt="[Homepage button - image not recovered]" border="0" width="115" height="22"></a></p>
+
+<p>&nbsp;</p>
+
+</body>
+</html>

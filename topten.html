@@ -6,8 +6,40 @@
   A:hover { color:#c0c000 }
 //--></style>
 <script>
+// ─── SONG LIST ───────────────────────────────────────────────────────────────
+// To assign a song, replace null with the mp3 path, e.g. 'mp3/cttrial.mp3'
+var songList = [
+  { rank: 10, label: 'Trial',            src: null },
+  { rank:  9, label: 'Mana',             src: null },
+  { rank:  8, label: 'Better get Mako!', src: null },
+  { rank:  7, label: 'Underwater',       src: null },
+  { rank:  6, label: 'Overworld',        src: null },
+  { rank:  5, label: 'Bad guy hehe',     src: null },
+  { rank:  4, label: 'Magnetremix',      src: null },
+  { rank:  3, label: 'Cool Bad Guy',     src: null },
+  { rank:  2, label: 'Awesome Theme',    src: null },
+  { rank:  1, label: '????????',         src: null }
+];
+// ─────────────────────────────────────────────────────────────────────────────
+
+var audio;
+
+function playSong(rank) {
+  var song = null;
+  for (var i = 0; i < songList.length; i++) {
+    if (songList[i].rank === rank) { song = songList[i]; break; }
+  }
+  if (!song || !song.src) return;
+  audio.pause();
+  audio.src = song.src;
+  audio.loop = true;
+  audio.play().catch(function(){});
+  var np = document.getElementById('nowplaying');
+  if (np) np.innerHTML = 'Now Playing: <em>' + song.label + '</em>';
+}
+
 window.addEventListener('DOMContentLoaded', function() {
-  var audio = new Audio('mp3/magnetremix.mp3');
+  audio = new Audio('mp3/magnetremix.mp3');
   audio.loop = true;
   var unlocked = false;
   var playPromise = audio.play();
@@ -52,25 +84,27 @@ Just click on the midi's below!</strong></font></p>
 
 <p><img src="images/music.gif" alt="Music animation" width="36" height="32"></p>
 
-<p><font color="#FFFF00" size="5"><em><strong>#10-----------<a href="midi/trial.mid">Trial</a></strong></em></font></p>
+<p id="nowplaying"><font color="#00FF41" face="Courier New, Courier, monospace" size="2"><em>Now Playing: &mdash;</em></font></p>
 
-<p><font color="#FFFF00" size="5"><em><strong>#9------------<a href="midi/mana.mid">Mana</a></strong></em></font></p>
+<p><font color="#FFFF00" size="5"><em><strong>#10-----------<a href="#" onclick="playSong(10); return false;">Trial</a></strong></em></font></p>
 
-<p><font color="#FFFF00" size="5"><em><strong>#8------------<a href="midi/mako.mid">Better get Mako!</a></strong></em></font></p>
+<p><font color="#FFFF00" size="5"><em><strong>#9------------<a href="#" onclick="playSong(9); return false;">Mana</a></strong></em></font></p>
 
-<p><font color="#FFFF00" size="5"><em><strong>#7------------<a href="midi/ctwaterp.mid">Underwater</a></strong></em></font></p>
+<p><font color="#FFFF00" size="5"><em><strong>#8------------<a href="#" onclick="playSong(8); return false;">Better get Mako!</a></strong></em></font></p>
 
-<p><font color="#FFFF00" size="5"><em><strong>#6------------<a href="midi/zeldalt.mid">Overworld</a></strong></em></font></p>
+<p><font color="#FFFF00" size="5"><em><strong>#7------------<a href="#" onclick="playSong(7); return false;">Underwater</a></strong></em></font></p>
 
-<p><font color="#FFFF00" size="5"><em><strong>#5------------<a href="midi/seph.mid"> Bad guy hehe</a></strong></em></font></p>
+<p><font color="#FFFF00" size="5"><em><strong>#6------------<a href="#" onclick="playSong(6); return false;">Overworld</a></strong></em></font></p>
 
-<p><font color="#FFFF00" size="5"><em><strong>#4------------<a href="midi/magnetremix.mid">Magnetremix</a></strong></em></font></p>
+<p><font color="#FFFF00" size="5"><em><strong>#5------------<a href="#" onclick="playSong(5); return false;"> Bad guy hehe</a></strong></em></font></p>
 
-<p><font color="#FFFF00" size="5"><em><strong>#3------------<a href="midi/finalboss2.mid">Cool Bad Guy</a></strong></em></font></p>
+<p><font color="#FFFF00" size="5"><em><strong>#4------------<a href="#" onclick="playSong(4); return false;">Magnetremix</a></strong></em></font></p>
 
-<p><font color="#FFFF00" size="5"><em><strong>#2------------<a href="midi/manatitle1.mid">Awesome Theme</a></strong></em></font></p>
+<p><font color="#FFFF00" size="5"><em><strong>#3------------<a href="#" onclick="playSong(3); return false;">Cool Bad Guy</a></strong></em></font></p>
 
-<p><font color="#FFFF00" size="5"><em><strong>#1------------<a href="midi/manafort.mid">????????</a></strong></em></font></p>
+<p><font color="#FFFF00" size="5"><em><strong>#2------------<a href="#" onclick="playSong(2); return false;">Awesome Theme</a></strong></em></font></p>
+
+<p><font color="#FFFF00" size="5"><em><strong>#1------------<a href="#" onclick="playSong(1); return false;">????????</a></strong></em></font></p>
 
 <p><font color="#FFFF00" size="4"><strong>(this page does not contain background music
 because then.....it would be too confusing, and only Ashashuaians are allowed to do that
